@@ -65,7 +65,7 @@ const catalogItems = [
     image: "images/mini_grid.jpg",
     description: "グリッドを基調としたミニマルな空間。",
     link: "https://virtualcast.jp/products/8e417b7abba8b88302aa05b3073823bba43fedd42716300ff8869e86d4ec7b22",
-    tags: [],
+    tags: ["シンプル","グリッド"],
     meta: {
           "種類": "VCI",
           "対応": "VirtualCast"
