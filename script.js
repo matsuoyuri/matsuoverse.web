@@ -36,6 +36,18 @@ const catalogItems = [
     }
   },
   {
+    title: "シンプルコメントボット",
+    category: "アイテム",
+    image: "images/simple_comment_bot.jpg",
+    description: "コメント欄を配信空間に実体化しました。\n\nリスナーがコメントするとロボットになって配信空間に現れます。\nコメント内容を吹き出しで表示し、新着コメントが届くとジャンプして反応します。\n\nコメントが増えるほどロボットも増え、空間がどんどん賑やかになっていきます。\n\n▶特徴\n・リスナー名を表示\n・コメント内容を吹き出し表示\n・新着コメントでジャンプ\n・最大15人まで表示\n・古いロボットから自動で入れ替え\n・ルーム対応\n・スタジオ対応\n\n▶操作方法\n【ロボット（大）USE】\nユーザー固定\n\n【ロボット（大）再度USE】\n固定解除\n\n【ロボット（小）USE】\n吹き出し表示切り替え\n\n【ロボット（小）スケール変更】\n全体スケール変更\n\n【ロボット（小）長押し】\n全体リセット\n\n▶注意事項\n・モニターカメラ前方約5mの位置に生成されます\n・広めの背景での利用を推奨します\n・複数生成しないでください\n\n▶導入について\n本アイテムはわんコメOSC連携を利用しています\n利用には公式わんコメプラグインの導入が必要です\n\n導入方法\nhttps://wiki.virtualcast.jp/wiki/deliverytool/onecomme\n\n配信者のためのコメントアプリ「わんコメ」\nhttps://onecomme.com\n",
+    link: "https://virtualcast.jp/products/428227be8c3eae37df2dc8df3bc56dc199fc1f577505a537cca22dd7cf713383",
+    tags: ["コメント","ロボット","わんコメ","配信"],
+    meta: {
+          "種類": "VCI",
+          "対応": "VirtualCast"
+    }
+  },
+  {
     title: "コメントリアクションパック",
     category: "アイテム",
     image: "images/comment_reaction_pack.jpg",
