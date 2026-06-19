@@ -1,58 +1,62 @@
 const catalogItems = [
   {
-    title: "シンプルリボンステージ",
-    category: "Location",
-    image: "images/simple-ribbon-stage.svg",
-    description:
-      "配信者を主役にするための、軽量で360度使いやすいVirtualCast向けロケーションです。\n\n正面を固定せず、どこから見ても成立しやすいシンプルな空間を想定しています。",
-    link: "",
-    tags: ["背景", "軽量", "配信向け"],
-    meta: {
-      "種類": "ロケーション",
-      "対応": "VirtualCast",
-      "価格": "未設定"
-    }
-  },
-  {
-    title: "シンプルコメントボット",
-    category: "VCI Item",
-    image: "images/simple-comment-bot.svg",
-    description:
-      "配信コメントが小さなロボットとして空間に出現するVCIです。\n\nコメントを単なる文字ではなく、配信空間にいる存在として見せることを目的にしています。",
-    link: "",
-    tags: ["コメント", "わんコメ", "ロボット"],
-    meta: {
-      "種類": "VCI",
-      "対応": "VirtualCast / わんコメOSC",
-      "価格": "未設定"
-    }
-  },
-  {
     title: "拡張コメントビューア",
-    category: "VCI Item",
-    image: "images/comment-viewer.svg",
-    description:
-      "コメント・ギフトをVR空間内で見やすく扱うための表示アイテムです。",
-    link: "",
-    tags: ["コメント", "ビューア", "配信支援"],
+    category: "アイテム",
+    image: "images/kakutyo_comment.jpg",
+    description: "コメント・ギフト、それぞれ最新7件を表示できるシンプルなコメントビューア。\nポインターで選択したコメントを拡大表示できます。\n\n本体長押しでポインターリスポーン\n\n公式のわんコメプラグインが必要です\n導入方法\nhttps://wiki.virtualcast.jp/wiki/deliverytool/onecomme\n\n配信者のためのコメントアプリ「わんコメ」https://onecomme.com\n\n効果音\n・ポケットサウンド – https://pocket-se.info/　\n・効果音ラボ",
+    link: "https://virtualcast.jp/products/d550ac5a099df2761245b9c097828168348a65b394c3bdff908626eb878e2f22",
+    tags: ["コメント","コメントビューア","わんコメ","配信"],
     meta: {
-      "種類": "VCI",
-      "対応": "VirtualCast / わんコメOSC",
-      "価格": "未設定"
+          "種類": "VCI",
+          "対応": "VirtualCast"
+    }
+  },
+  {
+    title: "シンプルリボンステージ",
+    category: "ロケーション",
+    image: "images/simple_ribbon_stage.jpg",
+    description: "仮想空間をイメージしたロケーション。",
+    link: "https://virtualcast.jp/products/fbbb9bc1dbf238cd07eeb03bbe4473af1acc81e08b0b5b944fed44ab66eb5579",
+    tags: ["配信","グリッド"],
+    meta: {
+          "種類": "VCI",
+          "対応": "VirtualCast"
+    }
+  },
+  {
+    title: "ルーム配信用コメントセット",
+    category: "アイテム",
+    image: "images/comment_set.jpg",
+    description: "ルーム配信向けにコメント落下とコメント窓の処理を1つにまとめました\n処理が重すぎる場合はOFFにしてください\n\nコメント数が多すぎる場合に意図的にスキップする機能が入っています（ほとんどの場合作動しません）\n\n公式のわんコメプラグインが必要です\n導入方法\nhttps://wiki.virtualcast.jp/wiki/deliverytool/onecomme\n\n配信者のためのコメントアプリ「わんコメ」https://onecomme.com\n\n効果音\n・ポケットサウンド – https://pocket-se.info/　\n・効果音ラボ",
+    link: "https://virtualcast.jp/products/1d53106791cd9753909b72da3a4736a363df3934ec9377551f8f6b59008b1398",
+    tags: ["コメント","コメント窓","コメント落下","わんコメ","配信"],
+    meta: {
+          "種類": "VCI",
+          "対応": "VirtualCast"
     }
   },
   {
     title: "コメントリアクションパック",
-    category: "VCI Item",
-    image: "images/comment-reaction-pack.svg",
-    description:
-      "リスナーのコメント内容に応じて、空間内にリアクション演出を発生させるVCIセットです。",
-    link: "",
-    tags: ["コメント", "演出", "リアクション"],
+    category: "アイテム",
+    image: "images/comment_reaction_pack.jpg",
+    description: "リアクションが配信空間に現れる。\n\nリスナーのコメント内容によって「草」「たらい」「拍手」の演出が起きます。\n\n▶特徴\n・「草」や「ｗｗ」で草が映える\n・「たらい」でたらいが落ちてくる\n・「8888」で拍手の効果音が鳴る\n・1つのVCIで3つの演出を使える\n・ルーム対応\n・スタジオ対応\n\n▶操作方法\n【たらいUSE長押し】\n即削除\n\n▶注意事項\n・草はモニターカメラ前方約2mの位置に生成されます\n・たらいはオーナーの位置にランダムに落ちてきます\n\n▶導入について\n本アイテムはわんコメOSC連携を利用しています\n利用には公式わんコメプラグインの導入が必要です\n\n導入方法\nhttps://wiki.virtualcast.jp/wiki/deliverytool/onecomme\n\n配信者のためのコメントアプリ「わんコメ」\nhttps://onecomme.com",
+    link: "https://virtualcast.jp/products/7ba6b81dea10df78d8b71055e194d872e3e1f5f2a9e34969ec1dbb59368db477",
+    tags: ["コメント","演出","わんコメ","草","たらい","拍手","配信"],
     meta: {
-      "種類": "VCI",
-      "対応": "VirtualCast / わんコメOSC",
-      "価格": "未設定"
+          "種類": "VCI",
+          "対応": "VirtualCast"
+    }
+  },
+  {
+    title: "ミニマルグリッド",
+    category: "ロケーション",
+    image: "images/mini_grid.jpg",
+    description: "グリッドを基調としたミニマルな空間。",
+    link: "https://virtualcast.jp/products/8e417b7abba8b88302aa05b3073823bba43fedd42716300ff8869e86d4ec7b22",
+    tags: [],
+    meta: {
+          "種類": "VCI",
+          "対応": "VirtualCast"
     }
   }
 ];
