@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>MATSUOVERSE Catalog</title>
   <meta name="description" content="松尾バース / VirtualCast向けアイテム・ロケーションのカタログ。" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,32 +14,55 @@
     <div class="header-inner">
       <p class="eyebrow">VirtualCast / VCI / Location</p>
       <h1>MATSUOVERSE<br>Catalog</h1>
-      <p class="lead">配信空間を少し楽しくする、VirtualCast向けアイテムとロケーションのカタログ。</p>
+      <p class="lead">
+        配信空間を少し楽しくする、VirtualCast向けアイテムとロケーションのカタログ。
+      </p>
     </div>
   </header>
 
   <main class="site-main">
     <section class="catalog-section" aria-label="Catalog">
       <div class="section-head">
-        <h2>Catalog</h2>
-        <p>画像をクリックすると詳細を表示します。</p>
+        <div>
+          <h2>Catalog</h2>
+          <p id="resultCount">画像をクリックすると詳細を表示します。</p>
+        </div>
       </div>
+
+      <div class="catalog-controls" aria-label="Catalog controls">
+        <label class="search-label">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="タイトル・説明・タグで検索">
+        </label>
+
+        <div id="categoryFilters" class="category-filters" aria-label="Category filters"></div>
+      </div>
+
       <div id="catalogGrid" class="catalog-grid"></div>
+
+      <p id="emptyMessage" class="empty-message">該当するアイテムがありません。</p>
     </section>
   </main>
 
   <div id="modalOverlay" class="modal-overlay" aria-hidden="true">
     <article class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <button id="modalClose" class="modal-close" type="button" aria-label="閉じる">×</button>
+
       <div class="modal-image-area">
         <img id="modalImage" class="modal-image" src="" alt="">
       </div>
+
       <div class="modal-body">
         <p id="modalCategory" class="modal-category"></p>
         <h2 id="modalTitle"></h2>
         <p id="modalDescription"></p>
+
+        <div id="modalTags" class="modal-tags"></div>
         <dl id="modalMeta" class="modal-meta"></dl>
-        <a id="modalLink" class="modal-link" href="#" target="_blank" rel="noopener">詳細ページを見る</a>
+
+        <a id="modalLink" class="modal-link" href="#" target="_blank" rel="noopener">
+          詳細ページを見る
+        </a>
       </div>
     </article>
   </div>

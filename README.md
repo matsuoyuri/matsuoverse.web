@@ -1,25 +1,22 @@
-# MATSUOVERSE Catalog
+# MATSUOVERSE Catalog v3 Compact Mobile
 
-GitHub Pages用のシンプルなカタログサイトです。
+Wix iframe埋め込みとスマホ表示を想定して、全体をコンパクト化した版です。
 
-## 使い方
+## 変更点
 
-1. このフォルダの中身をGitHubリポジトリにアップロードします。
-2. `images` フォルダに画像を入れます。
-3. `script.js` の `catalogItems` を編集します。
-4. GitHub Pagesを有効化します。
+- ヘッダー文字と余白を小さめに調整
+- カード間隔を圧縮
+- モーダルを小さめに調整
+- スマホでは検索欄・カテゴリ・カード表示が自然に並ぶように調整
+- 640px以下ではモーダルを下から出るシート風に変更
+- 420px以下ではカード1列表示に切り替え
 
-## 画像の差し替え
+## 更新方法
 
-最初は仮のSVG画像が入っています。
-本番画像に差し替える場合は、`images` フォルダに画像を入れて `script.js` の `image` を変更してください。
+GitHubリポジトリの以下を上書きしてください。
 
-例:
+- index.html
+- style.css
+- script.js
 
-```js
-image: "images/simple-ribbon-stage.jpg"
-```
-
-## GitHub Pages
-
-Repository Settings → Pages → Deploy from a branch → main / root → Save
+画像はそのままでOKです。

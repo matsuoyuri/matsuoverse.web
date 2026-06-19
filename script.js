@@ -1,14 +1,58 @@
 const catalogItems = [
   {
-    title: "拡張コメントビューア",
-    category: "アイテム",
-    image: "images/kakutyo_comment.jpg",
-    description: "コメント・ギフト、それぞれ最新7件を表示できるシンプルなコメントビューア。\nポインターで選択したコメントを拡大表示できます。\n\n本体長押しでポインターリスポーン\n\n公式のわんコメプラグインが必要です\n導入方法\nhttps://wiki.virtualcast.jp/wiki/deliverytool/onecomme\n\n配信者のためのコメントアプリ「わんコメ」https://onecomme.com\n\n効果音\n・ポケットサウンド – https://pocket-se.info/　\n・効果音ラボ",
-    link: "https://virtualcast.jp/products/d550ac5a099df2761245b9c097828168348a65b394c3bdff908626eb878e2f22",
+    title: "シンプルリボンステージ",
+    category: "Location",
+    image: "images/simple-ribbon-stage.svg",
+    description:
+      "配信者を主役にするための、軽量で360度使いやすいVirtualCast向けロケーションです。\n\n正面を固定せず、どこから見ても成立しやすいシンプルな空間を想定しています。",
+    link: "",
+    tags: ["背景", "軽量", "配信向け"],
     meta: {
-          "種類": "アイテム",
-          "対応": "VirtualCast",
-          "価格": "無料"
+      "種類": "ロケーション",
+      "対応": "VirtualCast",
+      "価格": "未設定"
+    }
+  },
+  {
+    title: "シンプルコメントボット",
+    category: "VCI Item",
+    image: "images/simple-comment-bot.svg",
+    description:
+      "配信コメントが小さなロボットとして空間に出現するVCIです。\n\nコメントを単なる文字ではなく、配信空間にいる存在として見せることを目的にしています。",
+    link: "",
+    tags: ["コメント", "わんコメ", "ロボット"],
+    meta: {
+      "種類": "VCI",
+      "対応": "VirtualCast / わんコメOSC",
+      "価格": "未設定"
+    }
+  },
+  {
+    title: "拡張コメントビューア",
+    category: "VCI Item",
+    image: "images/comment-viewer.svg",
+    description:
+      "コメント・ギフトをVR空間内で見やすく扱うための表示アイテムです。",
+    link: "",
+    tags: ["コメント", "ビューア", "配信支援"],
+    meta: {
+      "種類": "VCI",
+      "対応": "VirtualCast / わんコメOSC",
+      "価格": "未設定"
+    }
+  },
+  {
+    title: "コメントリアクションパック",
+    category: "VCI Item",
+    image: "images/comment-reaction-pack.svg",
+    description:
+      "リスナーのコメント内容に応じて、空間内にリアクション演出を発生させるVCIセットです。",
+    link: "",
+    tags: ["コメント", "演出", "リアクション"],
+    meta: {
+      "種類": "VCI",
+      "対応": "VirtualCast / わんコメOSC",
+      "価格": "未設定"
     }
   }
 ];
@@ -22,11 +66,68 @@ const modalTitle = document.getElementById("modalTitle");
 const modalDescription = document.getElementById("modalDescription");
 const modalLink = document.getElementById("modalLink");
 const modalMeta = document.getElementById("modalMeta");
+const modalTags = document.getElementById("modalTags");
+const categoryFilters = document.getElementById("categoryFilters");
+const searchInput = document.getElementById("searchInput");
+const resultCount = document.getElementById("resultCount");
+const emptyMessage = document.getElementById("emptyMessage");
+
+let currentCategory = "All";
+let currentQuery = "";
+
+function renderCategoryFilters() {
+  const categories = ["All", ...new Set(catalogItems.map(item => item.category).filter(Boolean))];
+
+  categoryFilters.innerHTML = "";
+
+  categories.forEach(category => {
+    const button = document.createElement("button");
+    button.className = "filter-button";
+    button.type = "button";
+    button.textContent = category === "All" ? "すべて" : category;
+    button.dataset.category = category;
+
+    if (category === currentCategory) {
+      button.classList.add("active");
+    }
+
+    button.addEventListener("click", () => {
+      currentCategory = category;
+      renderCategoryFilters();
+      renderCatalog();
+    });
+
+    categoryFilters.appendChild(button);
+  });
+}
+
+function getFilteredItems() {
+  const query = normalizeText(currentQuery);
+
+  return catalogItems
+    .map((item, index) => ({ item, index }))
+    .filter(({ item }) => {
+      const matchesCategory = currentCategory === "All" || item.category === currentCategory;
+
+      const searchable = normalizeText([
+        item.title,
+        item.category,
+        item.description,
+        ...(item.tags || []),
+        ...Object.values(item.meta || {})
+      ].join(" "));
+
+      const matchesQuery = !query || searchable.includes(query);
+
+      return matchesCategory && matchesQuery;
+    });
+}
 
 function renderCatalog() {
+  const filtered = getFilteredItems();
   grid.innerHTML = "";
 
-  catalogItems.forEach((item, index) => {
+  filtered.forEach(({ item, index }) => {
     const button = document.createElement("button");
     button.className = "catalog-item";
     button.type = "button";
@@ -38,10 +139,24 @@ function renderCatalog() {
       </span>
       <span class="catalog-title">${escapeHtml(item.title)}</span>
       <span class="catalog-category">${escapeHtml(item.category)}</span>
+      ${renderTagHtml(item.tags || [])}
     `;
 
     grid.appendChild(button);
   });
+
+  resultCount.textContent = `${filtered.length} / ${catalogItems.length} 件を表示中`;
+  emptyMessage.classList.toggle("show", filtered.length === 0);
+}
+
+function renderTagHtml(tags) {
+  if (!tags.length) return "";
+
+  return `
+    <span class="catalog-tags">
+      ${tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
+    </span>
+  `;
 }
 
 function openModal(index) {
@@ -53,6 +168,7 @@ function openModal(index) {
   modalTitle.textContent = item.title;
   modalDescription.textContent = item.description;
 
+  renderModalTags(item.tags || []);
   renderMeta(item.meta || {});
 
   if (item.link) {
@@ -73,6 +189,19 @@ function closeModal() {
   document.body.style.overflow = "";
 }
 
+function renderModalTags(tags) {
+  modalTags.innerHTML = "";
+
+  tags.forEach(tag => {
+    const span = document.createElement("span");
+    span.className = "tag";
+    span.textContent = tag;
+    modalTags.appendChild(span);
+  });
+
+  modalTags.style.display = tags.length ? "flex" : "none";
+}
+
 function renderMeta(meta) {
   modalMeta.innerHTML = "";
 
@@ -90,6 +219,10 @@ function renderMeta(meta) {
   modalMeta.style.display = modalMeta.children.length ? "grid" : "none";
 }
 
+function normalizeText(value) {
+  return String(value ?? "").toLowerCase().normalize("NFKC");
+}
+
 function escapeHtml(value) {
   return String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -98,6 +231,11 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 }
+
+searchInput.addEventListener("input", (event) => {
+  currentQuery = event.target.value;
+  renderCatalog();
+});
 
 modalClose.addEventListener("click", closeModal);
 
@@ -113,4 +251,5 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+renderCategoryFilters();
 renderCatalog();
