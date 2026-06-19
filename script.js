@@ -3,7 +3,7 @@ const catalogItems = [
     title: "拡張コメントビューア",
     category: "アイテム",
     image: "images/kakutyo_comment.jpg",
-    description: "コメント・ギフト、それぞれ最新7件を表示できるシンプルなコメントビューア。\nポインターで選択したコメントを拡大表示できます。\n\n本体長押しでポインターリスポーン\n\n公式のわんコメプラグインが必要です\n導入方法\nhttps://wiki.virtualcast.jp/wiki/deliverytool/onecomme\n\n配信者のためのコメントアプリ「わんコメ」https://onecomme.com\n\n効果音\n・ポケットサウンド – https://pocket-se.info/　\n・効果音ラボ",
+    description: "コメント・ギフト、それぞれ最新7件を表示できるシンプルなコメントビューア。\nポインターで選択したコメントを拡大表示できます。",
     link: "https://virtualcast.jp/products/d550ac5a099df2761245b9c097828168348a65b394c3bdff908626eb878e2f22",
     tags: ["コメント","コメントビューア","わんコメ","配信"],
     meta: {
@@ -27,7 +27,7 @@ const catalogItems = [
     title: "ルーム配信用コメントセット",
     category: "アイテム",
     image: "images/comment_set.jpg",
-    description: "ルーム配信向けにコメント落下とコメント窓の処理を1つにまとめました\n処理が重すぎる場合はOFFにしてください\n\nコメント数が多すぎる場合に意図的にスキップする機能が入っています（ほとんどの場合作動しません）\n\n公式のわんコメプラグインが必要です\n導入方法\nhttps://wiki.virtualcast.jp/wiki/deliverytool/onecomme\n\n配信者のためのコメントアプリ「わんコメ」https://onecomme.com\n\n効果音\n・ポケットサウンド – https://pocket-se.info/　\n・効果音ラボ",
+    description: "ルーム配信向けにコメント落下とコメント窓の処理を1つにまとめました",
     link: "https://virtualcast.jp/products/1d53106791cd9753909b72da3a4736a363df3934ec9377551f8f6b59008b1398",
     tags: ["コメント","コメント窓","コメント落下","わんコメ","配信"],
     meta: {
@@ -39,7 +39,7 @@ const catalogItems = [
     title: "シンプルコメントボット",
     category: "アイテム",
     image: "images/simple_comment_bot.jpg",
-    description: "コメント欄を配信空間に実体化しました。\n\nリスナーがコメントするとロボットになって配信空間に現れます。\nコメント内容を吹き出しで表示し、新着コメントが届くとジャンプして反応します。\n\nコメントが増えるほどロボットも増え、空間がどんどん賑やかになっていきます。\n\n▶特徴\n・リスナー名を表示\n・コメント内容を吹き出し表示\n・新着コメントでジャンプ\n・最大15人まで表示\n・古いロボットから自動で入れ替え\n・ルーム対応\n・スタジオ対応\n\n▶操作方法\n【ロボット（大）USE】\nユーザー固定\n\n【ロボット（大）再度USE】\n固定解除\n\n【ロボット（小）USE】\n吹き出し表示切り替え\n\n【ロボット（小）スケール変更】\n全体スケール変更\n\n【ロボット（小）長押し】\n全体リセット\n\n▶注意事項\n・モニターカメラ前方約5mの位置に生成されます\n・広めの背景での利用を推奨します\n・複数生成しないでください\n\n▶導入について\n本アイテムはわんコメOSC連携を利用しています\n利用には公式わんコメプラグインの導入が必要です\n\n導入方法\nhttps://wiki.virtualcast.jp/wiki/deliverytool/onecomme\n\n配信者のためのコメントアプリ「わんコメ」\nhttps://onecomme.com\n",
+    description: "コメント欄を配信空間に実体化しました。\n\nリスナーがコメントするとロボットになって配信空間に現れます。\nコメント内容を吹き出しで表示し、新着コメントが届くとジャンプして反応します。\n\nコメントが増えるほどロボットも増え、空間がどんどん賑やかになっていきます。",
     link: "https://virtualcast.jp/products/428227be8c3eae37df2dc8df3bc56dc199fc1f577505a537cca22dd7cf713383",
     tags: ["コメント","ロボット","わんコメ","配信"],
     meta: {
@@ -51,7 +51,7 @@ const catalogItems = [
     title: "コメントリアクションパック",
     category: "アイテム",
     image: "images/comment_reaction_pack.jpg",
-    description: "リアクションが配信空間に現れる。\n\nリスナーのコメント内容によって「草」「たらい」「拍手」の演出が起きます。\n\n▶特徴\n・「草」や「ｗｗ」で草が映える\n・「たらい」でたらいが落ちてくる\n・「8888」で拍手の効果音が鳴る\n・1つのVCIで3つの演出を使える\n・ルーム対応\n・スタジオ対応\n\n▶操作方法\n【たらいUSE長押し】\n即削除\n\n▶注意事項\n・草はモニターカメラ前方約2mの位置に生成されます\n・たらいはオーナーの位置にランダムに落ちてきます\n\n▶導入について\n本アイテムはわんコメOSC連携を利用しています\n利用には公式わんコメプラグインの導入が必要です\n\n導入方法\nhttps://wiki.virtualcast.jp/wiki/deliverytool/onecomme\n\n配信者のためのコメントアプリ「わんコメ」\nhttps://onecomme.com",
+    description: "リアクションが配信空間に現れる。\n\nリスナーのコメント内容によって「草」「たらい」「拍手」の演出が起きます。",
     link: "https://virtualcast.jp/products/7ba6b81dea10df78d8b71055e194d872e3e1f5f2a9e34969ec1dbb59368db477",
     tags: ["コメント","演出","わんコメ","草","たらい","拍手","配信"],
     meta: {
