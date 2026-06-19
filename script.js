@@ -2,7 +2,7 @@ const catalogItems = [
   {
     title: "拡張コメントビューア",
     category: "アイテム",
-    image: "images/kakutyo_comment",
+    image: "images/kakutyo_comment.jpg",
     description: "コメント・ギフト、それぞれ最新7件を表示できるシンプルなコメントビューア。\nポインターで選択したコメントを拡大表示できます。\n\n本体長押しでポインターリスポーン\n\n公式のわんコメプラグインが必要です\n導入方法\nhttps://wiki.virtualcast.jp/wiki/deliverytool/onecomme\n\n配信者のためのコメントアプリ「わんコメ」https://onecomme.com\n\n効果音\n・ポケットサウンド – https://pocket-se.info/　\n・効果音ラボ",
     link: "https://virtualcast.jp/products/d550ac5a099df2761245b9c097828168348a65b394c3bdff908626eb878e2f22",
     meta: {
