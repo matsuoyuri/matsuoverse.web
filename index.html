@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MATSUOVERSE Catalog</title>
+  <meta name="description" content="松尾バース / VirtualCast向けアイテム・ロケーションのカタログ。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">VirtualCast / VCI / Location</p>
+      <h1>MATSUOVERSE<br>Catalog</h1>
+      <p class="lead">配信空間を少し楽しくする、VirtualCast向けアイテムとロケーションのカタログ。</p>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="catalog-section" aria-label="Catalog">
+      <div class="section-head">
+        <h2>Catalog</h2>
+        <p>画像をクリックすると詳細を表示します。</p>
+      </div>
+      <div id="catalogGrid" class="catalog-grid"></div>
+    </section>
+  </main>
+
+  <div id="modalOverlay" class="modal-overlay" aria-hidden="true">
+    <article class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="modalClose" class="modal-close" type="button" aria-label="閉じる">×</button>
+      <div class="modal-image-area">
+        <img id="modalImage" class="modal-image" src="" alt="">
+      </div>
+      <div class="modal-body">
+        <p id="modalCategory" class="modal-category"></p>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <dl id="modalMeta" class="modal-meta"></dl>
+        <a id="modalLink" class="modal-link" href="#" target="_blank" rel="noopener">詳細ページを見る</a>
+      </div>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <p>© MATSUOVERSE</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
