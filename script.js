@@ -70,6 +70,18 @@ const catalogItems = [
           "種類": "VCI",
           "対応": "VirtualCast"
     }
+  },
+  {
+    title: "スパチャ演出VCI",
+    category: "アイテム",
+    image: "images/superchat_item_drop.jpg",
+    description: "スーパーチャットやギフトに反応して、VR空間に特定のお菓子のアイテムが降ります。\nアイテムの種類やサイズは、スーパーチャットやギフトの金額に応じて変化します。",
+    link: "https://virtualcast.jp/products/e07cc6905d75214fb346e5ad3a4f470b2ed5687a240fb1315ef35a288b264303",
+    tags: ["ギフト","わんコメ","配信"],
+    meta: {
+          "種類": "VCI",
+          "対応": "VirtualCast"
+    }
   }
 ];
 
